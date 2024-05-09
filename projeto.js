@@ -6,8 +6,7 @@ let niveis = {
     Platina: { min: 7001, max: 8000 },
     Ascendente: { min: 8001, max: 9000 },
     Imortal: { min: 9001, max: 10000 },
-    Radiante: { min: 10001, max: 20001 }
-
+    Radiante: { min: 10001, max: Infinity } 
 }
 
 class Personagem{
@@ -20,7 +19,7 @@ class Personagem{
     }
     getPatente(xp){
         for(let patente in niveis){
-            if(xp>=niveis[patente].min && xp<=niveis[patente].max){
+            if(xp >= niveis[patente].min && xp <= niveis[patente].max){
                 return patente
             }
         }
@@ -31,5 +30,5 @@ class Personagem{
     }
 }
 
-let character = new Personagem("Alberto", 20000, "Guerreiro", "Elfo")
+let character = new Personagem("Alberto", 1000, "Guerreiro", "Elfo")
 console.log(character.personagemDetalhes)
